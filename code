@@ -6,7 +6,7 @@ ex: url =  'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy50cmFuc2lzdG9yLmZ
 '''
 
 
-url =  ''
+url =  input('input your link here: ')
 page = urllib.request.urlopen(url)
 soup = BeautifulSoup(page, 'html.parser')
 
