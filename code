@@ -1,0 +1,20 @@
+from bs4 import BeautifulSoup
+import urllib.request
+
+'''you insert your link channel on gg podcast into 'url'
+ex: url =  'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy50cmFuc2lzdG9yLmZtL2NodXllbm5nYW5o?sa=X&ved=0CCwQ9sEGahcKEwion6mt4sPuAhUAAAAAHQAAAAAQTw'
+'''
+
+
+url =  ''
+page = urllib.request.urlopen(url)
+soup = BeautifulSoup(page, 'html.parser')
+
+link_down = soup.find_all('div', jsname = 'fvi9Ef')
+
+for link in link_down:
+	link1 = link.get('jsdata')
+	true_link = link1.split(';')
+	print(true_link[1])
+
+
